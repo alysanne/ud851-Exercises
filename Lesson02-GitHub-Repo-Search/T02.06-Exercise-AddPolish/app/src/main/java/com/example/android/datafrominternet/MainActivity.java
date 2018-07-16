@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.android.datafrominternet.utilities.NetworkUtils;
@@ -37,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mSearchResultsTextView;
 
     // TODO (12) Create a variable to store a reference to the error message TextView
-
+    private TextView mErrorMessageTextView;
     // TODO (24) Create a ProgressBar variable to store a reference to the ProgressBar
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mSearchBoxEditText = (EditText) findViewById(R.id.et_search_box);
-
         mUrlDisplayTextView = (TextView) findViewById(R.id.tv_url_display);
         mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
 
         // TODO (13) Get a reference to the error TextView using findViewById
-
+        mErrorMessageTextView = (TextView) findViewById(R.id.tv_error_message_display);
         // TODO (25) Get a reference to the ProgressBar using findViewById
+        mProgressBar = (ProgressBar) findViewById(R.id.pb_loading);
     }
 
     /**
@@ -69,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO (14) Create a method called showJsonDataView to show the data and hide the error
-
+    private void showJsonDataView() {
+        
+    }
     // TODO (15) Create a method called showErrorMessage to show the error and hide the data
 
     public class GithubQueryTask extends AsyncTask<URL, Void, String> {
